@@ -57,12 +57,12 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 
 		init: function(target, values, tween, index) {
             // if there're no start value, stops processing
-            if(! tween.vars.startAt) return;
+            if(! tween.vars.startAt) console.error('This plugin needs to be used with fromTo.');
 
             this.isIE = (document.documentMode || /Edge/.test(navigator.userAgent)) ? true : false;
             
             // define initial blur
-            const {blurX, blurY}  = tween.vars.startAt ? tween.vars.startAt.blur : {blurX: 0, blurY: 0}; 
+            const {blurX = 0, blurY = 0}  = tween.vars.startAt; 
 
             // record the target so that we can refer to it in the set method when doing updates.
 			this._target = target; 
