@@ -62,7 +62,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
             this.isIE = (document.documentMode || /Edge/.test(navigator.userAgent)) ? true : false;
             
             // define initial blur
-            const {blurX, blurY}  = tween.vars.startAt ? tween.vars.startAt.blur : {blurX: 0, blurY: 0}; 
+            const {blurX = 0, blurY = 0}  = tween.vars.startAt; 
 
             // record the target so that we can refer to it in the set method when doing updates.
 			this._target = target; 
